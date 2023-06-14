@@ -4,19 +4,33 @@ createApp({
 
     data() {
         return {
-            apiUrl: "api.php"
-        }
-    },
-    methods: {
-        chiamata() {
-            console.log("testo");
+            apiUrl: "api.php",
+            todoList: [ ],
+            newTask: ""
         }
     },
     mounted() {
-        console.log("App caricata");
-        axios.get(this.apiUrl).then((response) => {
-            console.log("Dati ricevuti: ", response);
-        });
+        this.getDati();
+    },
+    methods: {
+        getDati() {
+            axios.get(this.apiUrl).then((response) => {
+                console.log("Dati ricevuti: ", response.data);
+                this.todoList = response.data;
+            });
+        },
+        addNewTask() {
+            const data = { newTask: this.newTask };
+
+
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                console.log("Dati ricevuti: ", response.data);
+                this.todoList = response.data;
+            });
+            console.log("Nuova task", this.newTask)
+        }
     }
 
 }).mount("#app");
