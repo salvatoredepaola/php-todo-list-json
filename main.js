@@ -29,7 +29,21 @@ createApp({
                 console.log("Dati ricevuti: ", response.data);
                 this.todoList = response.data;
             });
-            console.log("Nuova task", this.newTask)
+            console.log("Nuova task", this.newTask);
+            this.newTask = "";
+
+        },
+        elimina(i) {
+            console.log(i);
+            const data = { elimina: i };
+
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                console.log("Dati ricevuti: ", response.data);
+                this.todoList = response.data;
+            });
+            
         }
     }
 

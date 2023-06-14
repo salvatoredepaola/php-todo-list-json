@@ -1,9 +1,1 @@
-[
-    "Analisi",
-    "Progettazione",
-    "Proof of concept",
-    "Riunione",
-    "Debugging",
-    "Deploy",
-    "boh"
-]
+[{"text":"Analisi","done":false},{"text":"Progettazione","done":false},{"text":"Proof of concept","done":false},{"text":"Riunione","done":false},{"text":"Debugging","done":false},{"text":"Deploy","done":false}]

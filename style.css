@@ -1,4 +1,13 @@
 body{
-    background-color: #222;
+    background-color: #001632;
     color: white;
+}
+.my_container{
+    width: 588px;
+    margin: 0 auto;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
